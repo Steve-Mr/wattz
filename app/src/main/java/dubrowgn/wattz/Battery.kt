@@ -29,11 +29,11 @@ class Battery(ctx: Context) {
     }
 
     private fun fromMicros(v: Double?) : Double? {
-        return v?.div(1_000_000.0)
+        return v?.div(1_000.0)
     }
 
     private fun fromMillis(v: Double?) : Double? {
-        return v?.div(1_000.0)
+        return v?
     }
 
     val microamps : Double? get() = -1.0 * prop(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW)
