@@ -33,7 +33,7 @@ class Battery(ctx: Context) {
     }
 
     private fun fromMillis(v: Double?) : Double? {
-        return v?
+        return v
     }
 
     val microamps : Double? get() = -1.0 * prop(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW)
@@ -53,6 +53,6 @@ class Battery(ctx: Context) {
     val charging : Boolean? get() = mgr.isCharging
     val secondsUntilCharged: Double? get() {
         val secs = mgr.computeChargeTimeRemaining()
-        return if(secs == -1L) null else secs.toDouble().div(1_000.0)
+        return if(secs == -1L) null else secs.toDouble()//.div(1_000.0)
     }
 }
